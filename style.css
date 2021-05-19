@@ -1,0 +1,580 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ====================
+/* google font 
+/* =========================== 
+header-btn: #b0afaf; 
+middle-banner: #eeeeee;
+middle-btn: #cdcccc;
+register-btn: #6a6b6c;
+sns: #999999;
+footer: 6a6b6c;
+font: #333333;
+
+/* =========================== */
+
+/* ====================
+/* google font 
+/* =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/* ====================
+/* global css
+/* =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+  transition: 0.25s;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ====================
+/* menu
+/* =========================== */
+header{
+  width: 100%;
+  position: relative;
+  padding: 1rem 5.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.menu-md {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.menu-md ul {
+  list-style: none;
+  display: flex;
+  margin-right: 3.5rem;
+}
+.menu-md ul li {
+  padding: 0 1rem;
+}
+.menu-md ul li a {
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  font-weight: 500;
+}
+.header-btn {
+  color: #fff;
+  background-color: #b0afaf;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.menu-sm {
+  display: none;
+}
+
+/* ===================
+/* responsive design for toggle menu
+============================= */
+@media screen and (max-width: 991px) {
+  .menu-md {
+    display: none;
+  }
+  .navigation {
+    display: none; 
+  }
+  .menuToggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url("images/menu.png");
+    background-size: 30px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .menuToggle.active {
+    background: url("images/close.png");
+    background-size: 25px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1000;
+  }
+  header .menuToggle {
+    filter: invert(1); /* Make the menu icon turn black */
+  }
+  header .navigation.active {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    z-index: 900;
+  }
+  .menu-sm {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .menu-sm ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-right: 3.5rem;
+  }
+  .menu-sm ul li {
+    padding: 1rem;
+    border-bottom: #333 solid 1px; 
+    margin: 0.5rem 0;
+  }
+  .menu-sm ul li:last-child {
+    border-bottom: none;
+  }
+  .menu-sm ul li a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .header-btn {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+  }
+  .header-btn:hover {
+    background-color: #fff;
+    border: 2px solid #333;
+    color: #333;
+    font-weight: 600;
+  }
+}
+
+/* ====================
+/* main image
+/* =========================== */
+.main-img {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: url("images/main-img.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  top: 0;
+  left: 0;
+}
+.main-img h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  padding-top: 35vh;
+  text-align: center;
+}
+.sub {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,0.6);
+  padding: 1rem;
+  margin: 0 5rem 1rem;
+}
+.sub ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  list-style: none;
+}
+.sub ul li {
+  margin-right: 0.5rem;
+}
+.sub ul li:last-child {
+  margin-right: 0;
+}
+.sub ul li img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .main-img .sub {
+    display: none; /* Why sub part does not disappear??? */
+  }
+}
+
+/* ====================
+/* 大見出し
+/* =========================== */
+#feature {
+  max-width: 900px;
+  margin: 0 auto; /* Items in the feature are not in the center???? */
+}
+#feature h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2.5rem;
+}
+.feature-box {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.feature-item {
+  width: 30%;
+}
+.feature-text {
+  padding: 1rem 0;
+}
+.feature-text h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+.feature-text p {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 991px) {
+  .feature-box {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .feature-item {
+    width: 100%;
+  }
+}
+
+/* ====================
+/* break
+/* =========================== */
+#break {
+  background-color: #cdcccc;
+  width: 100%;
+  height: 300px;
+}
+#break h2 {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 5.5rem 0 0.5rem;
+  color: #333; /* How to make 大見出しpart into the middle of the box??? */
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto; 
+}
+.break-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.break-text {
+  flex-basis: 75%;
+}
+.break-detail {
+  flex-basis: 25%;
+}
+.break-text p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+.break-btn {
+  padding: 0.5rem 2.5rem;
+  text-transform: uppercase;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  background-color: #6a6b6c;
+  letter-spacing: 2px;
+}
+.break-btn:hover {
+  letter-spacing: 6px;
+}
+
+@media screen and (max-width: 991px) {
+  #break h2, 
+  .break-text p {
+    text-align: center;
+  }
+  .break-box {
+    flex-direction: column;
+  }
+  .break-btn {
+    margin-top: 1.5rem;
+  }
+}
+
+/* ====================
+/* point box
+/* =========================== */
+#point {
+  max-width: 900px;
+  margin: 0 auto;
+}
+#point h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2.5rem;
+}
+.point-box {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.point-item {
+  flex-basis: 23%;
+}
+.point-text {
+  padding: 1rem 0;
+}
+.point-text h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+.point-text p {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 991px) {
+  .point-box {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .point-item {
+    width: 100%;
+  }
+}
+
+/* ====================
+/* contact
+/* =========================== */
+.gray {
+  background-color: #cdcccc;
+  padding: 10vh;
+}
+.contact-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contact-tel {
+  text-align: center;
+}
+.contact-tel p {
+  padding-top: 0.5rem;
+}
+.contact-tel p i {
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+}
+.tel {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.contact-web {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-web p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+  color: #333;
+}
+.register-btn {
+  padding: 0.5rem 2.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  background-color: #6a6b6c;
+  letter-spacing: 2px;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 991px) {
+  .contact-box {
+    flex-direction: column;
+  }
+  .contact-web {
+    margin-top: 1.5rem;
+  }
+}
+
+/* ====================
+/* form
+/* =========================== */
+#form h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2.5rem;
+}
+.contactForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contactForm tr {
+  line-height: 35px;
+}
+.contactForm th {
+  text-align: left;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.contactForm th span {
+  background: #ea6564;
+  margin: 0 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+}
+.contactForm td {
+  padding-left: 5.5rem; /* Are there any other way to make that design? */
+}
+#form1 [type="text"], #form1 [type="password"],
+#form1 [type="mail"], #form1 [type="tel"] {
+  width: 450px;
+  padding: 4px;
+  margin: 0.5rem auto;
+}
+textarea {
+  width: 450px;
+  height: 150px;
+  padding: 10px;
+  margin: 0.5rem auto;
+}
+.btn {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.btn-submit {
+  background-color: #6a6b6c;
+  padding: .8rem;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-top: 25px;
+  transform: translateX(-50%); /* Are there any other way to move the button to the left? */
+}
+.btn-submit:hover {
+  background-color: white;
+  color: #6a6b6c;
+  border: #6a6b6c 1px solid;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+  .contactForm th,
+  .contactForm td {
+    display: block;
+    width: 100%;
+  }
+  .contactForm td,
+  .contactForm th {
+    padding-left: 0;
+  }
+  .btn-submit {
+    transform: translateX(0%); 
+  }
+}
+
+
+/* ====================
+/* sns icon
+/* =========================== */
+#sns h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2.5rem;
+  color: #333;
+}
+.sns-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.sns-icon ul {
+  list-style: none;
+}
+.sns-icon ul li {
+  display: inline-block;
+  padding: 0 1.5rem;
+}
+.sns-icon ul li i {
+  font-size: 2rem;
+  color: #333;
+}
+
+
+/* ====================
+/* footer
+/* =========================== */
+.footer-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-menu ul {
+  list-style: none;
+  display: flex;
+}
+.footer-menu ul li {
+  padding: 0 2rem 2rem;
+}
+.footer-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 991px) {
+  .footer-menu {
+    display: none;
+  }
+}
+
+
+
+
+
+
