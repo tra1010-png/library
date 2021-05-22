@@ -136,7 +136,7 @@ header{
     list-style: none;
     display: flex;
     flex-direction: column;
-    margin-right: 3.5rem;
+    /* margin-right: 3.5rem; */ /* No need to have this margin, this is the cause for the layout to not be straight */
   }
   .menu-sm ul li {
     padding: 1rem;
@@ -229,13 +229,14 @@ header{
   padding: 2.5rem;
 }
 .feature-box {
+  min-width: 100%;
   display: flex;
   justify-content: space-between;
-  text-align: center;
   margin-bottom: 1.5rem;
 }
 .feature-item {
   width: 30%;
+  text-align: center;
 }
 .feature-text {
   padding: 1rem 0;
@@ -275,7 +276,7 @@ header{
   font-size: 2rem;
   font-weight: 600;
   padding: 5.5rem 0 0.5rem;
-  color: #333; /* How to make 大見出しpart into the middle of the box??? */
+  color: #333; /* How to make 大見出し part into the middle of the box??? */
 }
 .container {
   max-width: 900px;
@@ -388,10 +389,6 @@ header{
 }
 .contact-tel p {
   padding-top: 0.5rem;
-}
-.contact-tel p i {
-  font-size: 2.5rem;
-  margin-right: 0.5rem;
 }
 .tel {
   font-size: 2.5rem;
